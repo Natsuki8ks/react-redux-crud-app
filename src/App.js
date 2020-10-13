@@ -3,7 +3,9 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-      <h1>Welcom to React</h1>
+	<input type="text" onClick={() => { console.log("Hi")}}  />
+	<input type="text" onChange={() => {console.log("editing")}} />
+	<h1>Welcom to React</h1>
     </div>
   );
 }
