@@ -1,13 +1,28 @@
 import React from 'react';
 
-function App() {
+const App = () => {
+  const profiles = [
+	{ name: "Taro", age: 10},
+	{ name: "Hanako", age: 5},
+	{ name: "NO name"},
+ ]
   return (
-    <div className="App">
-	<input type="text" onClick={() => { console.log("Hi")}}  />
-	<input type="text" onChange={() => {console.log("editing")}} />
-	<h1>Welcom to React</h1>
+   <div>
+      {
+	 profiles.map((profile, index) => {
+	    return <User name={profile.name} age={profile.age} key={index}  />
+	  })
+       }
     </div>
-  );
+  )
+}
+
+const User = (props) => {
+	return <div>I am {props.name} and {props.age} years old</div>
+}
+
+User.defaultProps = {
+    age:1
 }
 
 export default App;
